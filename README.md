@@ -15,5 +15,6 @@ This project sets up and configures GLPI, an IT asset management and service des
 - installation.sh → Automates GLPI installation.
 
 Author
-Pawandeep77
+Pawandeep Singh
+NSA Winter-24 P1
 
