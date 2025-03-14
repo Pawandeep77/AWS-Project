@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# Update system packages
+# Update the system packages
 sudo apt update && sudo apt upgrade -y
 
 # Install required dependencies
