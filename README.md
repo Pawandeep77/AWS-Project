@@ -13,10 +13,6 @@ This project sets up and configures GLPI, an IT asset management and service des
 
    Repository Structure
 - installation.sh → Automates GLPI installation.
-- configuration.md → Step-by-step setup guide.
-- client-test.md→ Testing procedures.
-- monitoring.md→ Enabling monitoring.
-- screenshots/→ Contains screenshots of the setup.
 
 Author
 Pawandeep77
