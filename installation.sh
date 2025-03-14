@@ -35,4 +35,4 @@ sudo chmod -R 755 glpi
 # Restart Apache
 sudo systemctl restart apache2
 
-echo "GLPI installation completed. Access it via http://18.227.190.214/glpi"
+echo "GLPI installation completed. Access it via http://glpi-server-IP/glpi"
