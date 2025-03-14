@@ -24,7 +24,7 @@ Check out installation.sh script for an explained installation of Glpi on the Se
 4.1 Accessing GLPI from the Client VM
 
 Installed a web browser (firefox) and accessed GLPI using:
-firefox http://18.227.190.214/glpi
+firefox http://glpi-server-IP/glpi
 Logged in using default credentials (glpi/glpi).
 
 4.2 Creating a Test Ticket & Adding an Asset
@@ -63,12 +63,12 @@ Solution: First go to the glpi keypair dir
 cd Downloads
 dir *.pem
 then put the SSH client cmd
-ssh -i "glpi-keypair.pem" ubuntu@ec2-18-227-190-214.us-east-2.compute.amazonaws.com
+ssh -i "glpi-keypair.pem" ubuntu@.us-east-2.compute.amazonaws.com
 
 Challenge:GLPI web interface not accessible
 
 Solution:Restarted Apache and checked firewall settings and used public IPv4 address instead of the private
-https://18.227.190.214/glpi
+https://glpi-server-IP/glpi
 
 Challenge:Client VM unable to reach GLPI
 
