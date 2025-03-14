@@ -1,0 +1,92 @@
+1. Project Overview
+This project aimed to deploy and configure GLPI (Gestionnaire Libre de Parc Informatique), an open-source IT Asset Management
+and Service Desk solution, on a free-tier AWS EC2 instance.
+A second client VM was provisioned to interact with GLPI for testing ticket creation, asset management, and monitoring features. 
+The entire process, including setup, configuration, and testing, was documented and stored in a GitHub repository.
+
+2. AWS Environment Setup
+
+2.1 Provisioning AWS Instances
+
+Created two AWS EC2 instances using Ubuntu 22.04.
+Configured Security Groups to allow HTTP, HTTPS, and SSH access.
+Assigned an Elastic IP to the GLPI server instance.
+Installed necessary system dependencies (Apache, PHP, MariaDB) on the GLPI server.
+
+3. GLPI Installation & Configuration
+
+3.1 Installing GLPI on the Server VM
+
+Check out installation.sh script for an explained installation of Glpi on the Server VM.
+
+4. Client VM Configuration & Testing
+
+4.1 Accessing GLPI from the Client VM
+
+Installed a web browser (firefox) and accessed GLPI using:
+firefox http://18.227.190.214/glpi
+Logged in using default credentials (glpi/glpi).
+
+4.2 Creating a Test Ticket & Adding an Asset
+
+Created a new support ticket:
+
+Title: "Internet Connectivity Issue in Office"
+
+Description: "Workstation is unable to connect to the Internet."
+
+Category: Network Issue
+
+Assigned to: Glpi Admin
+
+Added an inventory asset Client VM under Assets → Computers.
+
+5. GLPI Monitoring System Configuration
+
+5.1 Enabling the GLPI Inventory Plugin
+
+Activated the GLPI Inventory Plugin under Setup → Plugins.
+
+6. GitHub Repository & Documentation
+
+6.1 Repository Setup
+
+Created a dedicated GitHub repository.
+Added essential project files: Installation Script and Screenshots
+Committed and pushed the files to GitHub.
+
+7. Challenges Faced & Solutions
+
+Challenge: Connecting AWS instance
+
+Solution: First go to the glpi keypair dir
+cd Downloads
+dir *.pem
+then put the SSH client cmd
+ssh -i "glpi-keypair.pem" ubuntu@ec2-18-227-190-214.us-east-2.compute.amazonaws.com
+
+Challenge:GLPI web interface not accessible
+
+Solution:Restarted Apache and checked firewall settings and used public IPv4 address instead of the private
+https://18.227.190.214/glpi
+
+Challenge:Client VM unable to reach GLPI
+
+Solution:Adjusted AWS Security Groups to allow traffic
+
+8. Key Learnings & Improvements
+
+8.1 Lessons Learned
+
+Proper AWS resource planning is essential to stay within free-tier limits.
+Security best practices (e.g., disabling default credentials, enabling SSL) are crucial.
+Monitoring plugins enhance IT asset visibility and tracking.
+
+8.2 Potential Improvements
+
+Working on Email Notifications to improve tracking and monitoring.
+
+9. Conclusion
+
+This project is successfully deployed GLPI on AWS, configured IT asset management, enabled monitoring, and documented all steps 
+for reproducibility.
